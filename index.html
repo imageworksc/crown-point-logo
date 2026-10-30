@@ -10,124 +10,45 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap">
 <style>
 :root {
-  --page: #F5F4F2; --fg: #1B1A19; --muted: #6B6661; --rule: #DDD8D2; --card: #FFFFFF;
-  --ink: #0B0B0B; --orange: #FD673D; --gray: #7A7672;
+  --ink: #0B0B0B; --orange: #FD673D; --muted: #7A7672;
+  /* Shared logo unit: both options use the same scale, so CROWN POINT is the same size in each. */
+  --u: min(0.52px, calc((100vw - 48px) / 1264.1));
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--page); color: var(--fg); font: 16px/1.55 "Archivo", "Helvetica Neue", Arial, sans-serif; }
-.wrap { max-width: 1120px; margin: 0 auto; padding: 56px 16px 80px; }
-header.intro { margin-bottom: 56px; }
-.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin: 0 0 12px; }
-h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.1; margin: 0 0 16px; font-weight: 600; }
-h2 { font-size: clamp(22px, 3vw, 28px); margin: 0 0 6px; font-weight: 600; }
-p.lede { max-width: 62ch; color: var(--muted); margin: 0; }
-.option { margin-top: 72px; }
-.option-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
-.tag { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-.panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.panel { border-radius: 10px; display: grid; place-items: center; padding: clamp(28px, 6vw, 64px) clamp(20px, 4vw, 48px); border: 1px solid var(--rule); }
-.panel.light { background: #fff; }
-.panel.dark { background: var(--ink); border-color: var(--ink); }
-.panel img { width: 100%; max-width: 440px; height: auto; display: block; }
-.icons { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 16px; padding: 24px; background: var(--card); border: 1px solid var(--rule); border-radius: 10px; }
-.tile { display: grid; place-items: center; border-radius: 8px; }
-.tile img { display: block; }
-.tile.l { width: 112px; height: 112px; background: #fff; border: 1px solid var(--rule); }
-.tile.d { width: 112px; height: 112px; background: var(--ink); }
-.tile.s { width: 48px; height: 48px; background: #fff; border: 1px solid var(--rule); }
-.icons .note { color: var(--muted); font-size: 14px; flex: 1 1 200px; }
-.mock { margin-top: 16px; border-radius: 10px; overflow: hidden; border: 1px solid var(--rule); }
-.nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(16px, 4vw, 40px); background: var(--ink); }
-.nav img { height: 46px; width: auto; display: block; }
-.nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; color: #fff; font-size: 13px; letter-spacing: .05em; text-transform: uppercase; font-weight: 500; }
-.nav .cta { background: var(--orange); color: var(--ink); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; padding: 12px 16px; white-space: nowrap; }
-.points { margin: 18px 0 0; padding-left: 20px; color: var(--fg); max-width: 70ch; }
-.points li { margin: 4px 0; }
-.compare { display: grid; gap: 28px; justify-items: center; background: #fff; border: 1px solid var(--rule); border-radius: 10px; padding: 40px 20px; }
-.compare figure { margin: 0; text-align: center; }
-.compare img { max-width: 100%; height: auto; }
-.compare figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
-.swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 16px; }
-.sw { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; font-size: 14px; }
-.sw i { display: block; height: 64px; }
-.sw div { padding: 10px 12px; }
-.sw code { color: var(--muted); }
-footer { margin-top: 72px; color: var(--muted); font-size: 14px; }
-@media (max-width: 760px) {
-  .panels { grid-template-columns: 1fr; }
-  .nav ul { display: none; }
-  .nav img { height: 34px; }
-}
+body { margin: 0; background: #fff; color: var(--ink); font: 16px/1.5 "Archivo", "Helvetica Neue", Arial, sans-serif; }
+.intro { padding: 72px 24px 64px; text-align: center; }
+.eyebrow { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin: 0 0 10px; }
+h1 { font-size: clamp(26px, 4vw, 38px); line-height: 1.15; margin: 0; font-weight: 600; }
+.option + .option { margin-top: 96px; }
+.option-label { text-align: center; padding: 0 24px 28px; }
+.option-label h2 { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; margin: 0; }
+.space { display: grid; place-items: center; min-height: clamp(260px, 52vh, 480px); padding: 64px 24px; }
+.space.light { background: #fff; border-top: 1px solid #E6E2DD; }
+.space.dark { background: var(--ink); }
+.space img { display: block; height: auto; max-width: 100%; }
+.o1 { width: calc(var(--u) * 1264.1); }
+.o2 { width: calc(var(--u) * 1213.4); }
+footer { padding: 48px 24px 56px; text-align: center; color: var(--muted); font-size: 13px; }
 </style>
 </head>
 <body>
-<main class="wrap">
-  <header class="intro">
-    <p class="eyebrow">Crown Point Construction · Logo proposal</p>
-    <h1>Two directions for the Crown Point logo</h1>
-    <p class="lede">Both options keep the orange crown and the name, and fix two things in the current logo: the name now reads in full as <b>CROWN POINT</b>, and the horizontal layout fits a website header. Each one comes with a symbol that works on its own.</p>
-  </header>
+<header class="intro">
+  <p class="eyebrow">Crown Point Construction</p>
+  <h1>Logo proposal</h1>
+</header>
 
-  <section>
-    <h2>Current logo and the two options</h2>
-    <div class="compare" style="margin-top:16px">
-      <figure><img src="reference/current-logo.png" alt="Current Crown Point logo" width="420"><figcaption>Current logo</figcaption></figure>
-      <figure><img src="option-1-badge/svg/crown-point-option-1-light.svg" alt="Option 1" width="440"><figcaption>Option 1 · Badge</figcaption></figure>
-      <figure><img src="option-2-crown/svg/crown-point-option-2-light.svg" alt="Option 2" width="440"><figcaption>Option 2 · Crown</figcaption></figure>
-    </div>
-  </section>
+<section class="option">
+  <div class="option-label"><h2>Option 1</h2></div>
+  <div class="space light"><img class="o1" src="option-1-badge/svg/crown-point-option-1-light.svg" alt="Option 1 on a light background"></div>
+  <div class="space dark"><img class="o1" src="option-1-badge/svg/crown-point-option-1-dark.svg" alt="Option 1 on a dark background"></div>
+</section>
 
-  <section class="option">
-    <div class="option-head"><h2>Option 1 · Badge</h2><span class="tag">Crown inside an orange square</span></div>
-    <div class="panels">
-      <div class="panel light"><img src="option-1-badge/svg/crown-point-option-1-light.svg" alt="Option 1 on a light background"></div>
-      <div class="panel dark"><img src="option-1-badge/svg/crown-point-option-1-dark.svg" alt="Option 1 on a dark background"></div>
-    </div>
-    <div class="icons">
-      <span class="tile l"><img src="option-1-badge/svg/crown-point-option-1-icon.svg" width="80" alt=""></span>
-      <span class="tile d"><img src="option-1-badge/svg/crown-point-option-1-icon.svg" width="80" alt=""></span>
-      <span class="tile s"><img src="option-1-badge/svg/crown-point-option-1-icon.svg" width="32" alt=""></span>
-      <span class="note">The badge on its own: favicon, social profile picture, jobsite signs, hard-hat stickers.</span>
-    </div>
-    <div class="mock"><div class="nav"><img src="option-1-badge/svg/crown-point-option-1-dark.svg" alt="Option 1 in a website header"><ul><li>Home</li><li>Services</li><li>Projects</li><li>About</li></ul><span class="cta">Get a quote</span></div></div>
-    <ul class="points">
-      <li>Strong and recognizable at any size, even very small.</li>
-      <li>The square gives the brand a stand-alone icon.</li>
-      <li>Solid and grounded: a "built" look for a construction company.</li>
-    </ul>
-  </section>
+<section class="option">
+  <div class="option-label"><h2>Option 2</h2></div>
+  <div class="space light"><img class="o2" src="option-2-crown/svg/crown-point-option-2-light.svg" alt="Option 2 on a light background"></div>
+  <div class="space dark"><img class="o2" src="option-2-crown/svg/crown-point-option-2-dark.svg" alt="Option 2 on a dark background"></div>
+</section>
 
-  <section class="option">
-    <div class="option-head"><h2>Option 2 · Crown</h2><span class="tag">A larger, free-standing crown</span></div>
-    <div class="panels">
-      <div class="panel light"><img src="option-2-crown/svg/crown-point-option-2-light.svg" alt="Option 2 on a light background"></div>
-      <div class="panel dark"><img src="option-2-crown/svg/crown-point-option-2-dark.svg" alt="Option 2 on a dark background"></div>
-    </div>
-    <div class="icons">
-      <span class="tile l"><img src="option-2-crown/svg/crown-point-option-2-icon.svg" width="76" alt=""></span>
-      <span class="tile d"><img src="option-2-crown/svg/crown-point-option-2-icon.svg" width="76" alt=""></span>
-      <span class="tile s"><img src="option-2-crown/svg/crown-point-option-2-icon.svg" width="32" alt=""></span>
-      <span class="note">The crown on its own, without a container.</span>
-    </div>
-    <div class="mock"><div class="nav"><img src="option-2-crown/svg/crown-point-option-2-dark.svg" alt="Option 2 in a website header"><ul><li>Home</li><li>Services</li><li>Projects</li><li>About</li></ul><span class="cta">Get a quote</span></div></div>
-    <ul class="points">
-      <li>Lighter and more elegant, and the closest to the current logo.</li>
-      <li>The crown leads: a clear evolution of what the brand already has.</li>
-      <li>Best on clean backgrounds; lighter than the badge at very small sizes.</li>
-    </ul>
-  </section>
-
-  <section class="option">
-    <h2>Colors</h2>
-    <div class="swatches">
-      <div class="sw"><i style="background:#FD673D"></i><div>Crown Orange<br><code>#FD673D</code></div></div>
-      <div class="sw"><i style="background:#0B0B0B"></i><div>Ink Black<br><code>#0B0B0B</code></div></div>
-      <div class="sw"><i style="background:#7A7672"></i><div>Warm Gray<br><code>#7A7672</code></div></div>
-      <div class="sw"><i style="background:#FFFFFF;border-bottom:1px solid #DDD8D2"></i><div>White<br><code>#FFFFFF</code></div></div>
-    </div>
-  </section>
-
-  <footer>Prepared by ImageWorks Creative. Vector (SVG, PDF) and PNG files for both options are in this repository.</footer>
-</main>
+<footer>Prepared by ImageWorks Creative</footer>
 </body>
 </html>
