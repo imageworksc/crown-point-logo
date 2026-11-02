@@ -41,8 +41,12 @@ A larger orange crown stands free next to the name, with no container.
 |---|---|---|
 | Crown Orange | `#FD673D` | Crown and badge |
 | Ink Black | `#0B0B0B` | Name on light backgrounds |
-| Warm Gray | `#7A7672` | "Construction" |
 | White | `#FFFFFF` | Name on dark backgrounds, crown inside the badge |
+
+## Typography
+
+- **CROWN POINT:** Unbounded Medium, all caps.
+- **CONSTRUCTION:** Inter Regular, all caps, same cap height as CROWN POINT.
 
 ## Files
 
