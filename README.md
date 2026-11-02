@@ -40,13 +40,14 @@ A larger orange crown stands free next to the name, with no container.
 | Color | HEX | Use |
 |---|---|---|
 | Crown Orange | `#FD673D` | Crown and badge |
-| Ink Black | `#0B0B0B` | Name on light backgrounds |
-| White | `#FFFFFF` | Name on dark backgrounds, crown inside the badge |
+| Ink Black | `#0B0B0B` | "CROWN POINT" on light backgrounds |
+| Charcoal | `#45423F` | "CONSTRUCTION" on light backgrounds |
+| Soft White | `#CFCBC7` | "CONSTRUCTION" on dark backgrounds |
+| White | `#FFFFFF` | "CROWN POINT" on dark backgrounds, crown inside the badge |
 
 ## Typography
 
-- **CROWN POINT:** Unbounded Medium, all caps.
-- **CONSTRUCTION:** Inter Regular, all caps, same cap height as CROWN POINT.
+- **CROWN POINT** and **CONSTRUCTION:** Unbounded Medium, all caps. CONSTRUCTION is set slightly smaller so both lines end at the same width.
 
 ## Files
 
