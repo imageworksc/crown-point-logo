@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Crown Point Logo Proposal</title>
-<link rel="icon" href="option-1-badge/svg/crown-point-option-1-icon.svg">
+<link rel="icon" href="symbols/svg/crown-point-symbol-badge.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap">
@@ -13,7 +13,7 @@
   --ink: #0B0B0B; --orange: #FD673D;
   --bg: #FFFFFF; --fg: #0B0B0B; --muted: #7A7672; --line: #E6E2DD; --surface: #F5F4F2;
   /* Shared logo unit: both options use the same scale, so CROWN POINT is the same size in each. */
-  --u: min(0.7px, calc((100vw - 64px) / 1071.8));
+  --u: min(0.7px, calc((100vw - 64px) / 1071.8)); /* widest logo */
   --hu: 0.17px;
 }
 :root[data-theme="dark"] {
@@ -31,9 +31,9 @@ body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 "Archi
 .label { position: absolute; top: 28px; left: 32px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
 .label b { color: var(--fg); font-weight: 600; }
 .screen img { display: block; height: auto; max-width: 100%; }
-.o1 { width: calc(var(--u) * 1071.8); }
-.o2 { width: calc(var(--u) * 1022.9); }
-.icon { width: clamp(200px, 46vmin, 440px); }
+.icons { display: flex; gap: clamp(32px, 8vw, 120px); align-items: center; justify-content: center; flex-wrap: wrap; }
+.icon { width: clamp(140px, 32vmin, 340px); }
+.headers { display: grid; gap: 28px; width: min(1040px, 100%); }
 .hint { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 
 /* Website header mock */
@@ -42,11 +42,10 @@ body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 "Archi
 .browser-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
 .browser-bar span { flex: 1; margin-left: 10px; height: 22px; border-radius: 6px; background: var(--bg); border: 1px solid var(--line); }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px clamp(16px, 3vw, 36px); background: var(--bg); border-bottom: 1px solid var(--line); }
-.nav img.h1 { height: calc(var(--hu) * 266.1); width: auto; max-width: none; }
-.nav img.h2 { height: calc(var(--hu) * 260.3); width: auto; max-width: none; }
+.nav img { width: auto; max-width: none; }
 .nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; font-size: 13px; letter-spacing: .05em; text-transform: uppercase; font-weight: 500; }
 .nav .cta { background: var(--orange); color: var(--ink); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; padding: 12px 16px; white-space: nowrap; }
-.hero { height: clamp(140px, 28vh, 300px); background: linear-gradient(180deg, var(--surface), var(--bg)); }
+.hero { height: clamp(40px, 8vh, 90px); background: linear-gradient(180deg, var(--surface), var(--bg)); }
 
 /* Toggle */
 .toggle { position: fixed; top: 20px; right: 24px; z-index: 10; display: flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); }
@@ -77,64 +76,100 @@ body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 "Archi
 </div>
 
 <nav class="dots" aria-label="Sections">
-  <a href="#o1-logo" aria-label="Option 1 · Logo"></a>
-  <a href="#o1-icon" aria-label="Option 1 · Icon"></a>
+  <a href="#o1-badge" aria-label="Option 1 · Logo with badge"></a>
+  <a href="#o1-crown" aria-label="Option 1 · Logo with crown"></a>
   <a href="#o1-header" aria-label="Option 1 · Website header"></a>
   <span class="sep"></span>
-  <a href="#o2-logo" aria-label="Option 2 · Logo"></a>
-  <a href="#o2-icon" aria-label="Option 2 · Icon"></a>
+  <a href="#o2-badge" aria-label="Option 2 · Logo with badge"></a>
+  <a href="#o2-crown" aria-label="Option 2 · Logo with crown"></a>
   <a href="#o2-header" aria-label="Option 2 · Website header"></a>
+  <span class="sep"></span>
+  <a href="#symbols" aria-label="Symbols"></a>
 </nav>
 
 <main>
-  <section class="screen" id="o1-logo">
-    <p class="label"><b>Option 1</b> · Logo</p>
-    <img class="o1 on-light" src="option-1-badge/svg/crown-point-option-1-light.svg?v=20261102" alt="Option 1 logo">
-    <img class="o1 on-dark" src="option-1-badge/svg/crown-point-option-1-dark.svg?v=20261102" alt="Option 1 logo">
+  <section class="screen" id="o1-badge">
+    <p class="label"><b>Option 1 · Clean</b> · Logo with badge</p>
+    <img class="on-light" style="width: calc(var(--u) * 982.8)" src="option-1-clean/svg/crown-point-option-1-badge-light.svg?v=20261103" alt="Option 1 logo with the badge">
+    <img class="on-dark" style="width: calc(var(--u) * 982.8)" src="option-1-clean/svg/crown-point-option-1-badge-dark.svg?v=20261103" alt="Option 1 logo with the badge">
     <p class="hint">Scroll</p>
   </section>
 
-  <section class="screen" id="o1-icon">
-    <p class="label"><b>Option 1</b> · Icon</p>
-    <img class="icon" src="option-1-badge/svg/crown-point-option-1-icon.svg?v=20261102" alt="Option 1 icon">
+  <section class="screen" id="o1-crown">
+    <p class="label"><b>Option 1 · Clean</b> · Logo with crown</p>
+    <img class="on-light" style="width: calc(var(--u) * 933.9)" src="option-1-clean/svg/crown-point-option-1-crown-light.svg?v=20261103" alt="Option 1 logo with the crown">
+    <img class="on-dark" style="width: calc(var(--u) * 933.9)" src="option-1-clean/svg/crown-point-option-1-crown-dark.svg?v=20261103" alt="Option 1 logo with the crown">
   </section>
 
   <section class="screen" id="o1-header">
-    <p class="label"><b>Option 1</b> · Website header</p>
-    <div class="browser">
-      <div class="browser-bar"><i></i><i></i><i></i><span></span></div>
-      <div class="nav">
-        <img class="h1 on-light" src="option-1-badge/svg/crown-point-option-1-light.svg?v=20261102" alt="Option 1 in a website header">
-        <img class="h1 on-dark" src="option-1-badge/svg/crown-point-option-1-dark.svg?v=20261102" alt="Option 1 in a website header">
-        <ul><li>Home</li><li>Services</li><li>Projects</li><li>About</li></ul>
-        <span class="cta">Get a quote</span>
+    <p class="label"><b>Option 1 · Clean</b> · Website header</p>
+    <div class="headers">
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span></span></div>
+        <div class="nav">
+          <img class="on-light" style="height: calc(var(--hu) * 266.1)" src="option-1-clean/svg/crown-point-option-1-badge-light.svg?v=20261103" alt="Option 1 logo with the badge">
+          <img class="on-dark" style="height: calc(var(--hu) * 266.1)" src="option-1-clean/svg/crown-point-option-1-badge-dark.svg?v=20261103" alt="Option 1 logo with the badge">
+          <ul><li>Home</li><li>Services</li><li>Projects</li><li>About</li></ul>
+          <span class="cta">Get a quote</span>
+        </div>
+        <div class="hero"></div>
       </div>
-      <div class="hero"></div>
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span></span></div>
+        <div class="nav">
+          <img class="on-light" style="height: calc(var(--hu) * 260.3)" src="option-1-clean/svg/crown-point-option-1-crown-light.svg?v=20261103" alt="Option 1 logo with the crown">
+          <img class="on-dark" style="height: calc(var(--hu) * 260.3)" src="option-1-clean/svg/crown-point-option-1-crown-dark.svg?v=20261103" alt="Option 1 logo with the crown">
+          <ul><li>Home</li><li>Services</li><li>Projects</li><li>About</li></ul>
+          <span class="cta">Get a quote</span>
+        </div>
+        <div class="hero"></div>
+      </div>
     </div>
   </section>
 
-  <section class="screen" id="o2-logo">
-    <p class="label"><b>Option 2</b> · Logo</p>
-    <img class="o2 on-light" src="option-2-crown/svg/crown-point-option-2-light.svg?v=20261102" alt="Option 2 logo">
-    <img class="o2 on-dark" src="option-2-crown/svg/crown-point-option-2-dark.svg?v=20261102" alt="Option 2 logo">
+  <section class="screen" id="o2-badge">
+    <p class="label"><b>Option 2 · Bold</b> · Logo with badge</p>
+    <img class="on-light" style="width: calc(var(--u) * 1071.8)" src="option-2-bold/svg/crown-point-option-2-badge-light.svg?v=20261103" alt="Option 2 logo with the badge">
+    <img class="on-dark" style="width: calc(var(--u) * 1071.8)" src="option-2-bold/svg/crown-point-option-2-badge-dark.svg?v=20261103" alt="Option 2 logo with the badge">
   </section>
 
-  <section class="screen" id="o2-icon">
-    <p class="label"><b>Option 2</b> · Icon</p>
-    <img class="icon" src="option-2-crown/svg/crown-point-option-2-icon.svg?v=20261102" alt="Option 2 icon">
+  <section class="screen" id="o2-crown">
+    <p class="label"><b>Option 2 · Bold</b> · Logo with crown</p>
+    <img class="on-light" style="width: calc(var(--u) * 1022.9)" src="option-2-bold/svg/crown-point-option-2-crown-light.svg?v=20261103" alt="Option 2 logo with the crown">
+    <img class="on-dark" style="width: calc(var(--u) * 1022.9)" src="option-2-bold/svg/crown-point-option-2-crown-dark.svg?v=20261103" alt="Option 2 logo with the crown">
   </section>
 
   <section class="screen" id="o2-header">
-    <p class="label"><b>Option 2</b> · Website header</p>
-    <div class="browser">
-      <div class="browser-bar"><i></i><i></i><i></i><span></span></div>
-      <div class="nav">
-        <img class="h2 on-light" src="option-2-crown/svg/crown-point-option-2-light.svg?v=20261102" alt="Option 2 in a website header">
-        <img class="h2 on-dark" src="option-2-crown/svg/crown-point-option-2-dark.svg?v=20261102" alt="Option 2 in a website header">
-        <ul><li>Home</li><li>Services</li><li>Projects</li><li>About</li></ul>
-        <span class="cta">Get a quote</span>
+    <p class="label"><b>Option 2 · Bold</b> · Website header</p>
+    <div class="headers">
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span></span></div>
+        <div class="nav">
+          <img class="on-light" style="height: calc(var(--hu) * 266.1)" src="option-2-bold/svg/crown-point-option-2-badge-light.svg?v=20261103" alt="Option 2 logo with the badge">
+          <img class="on-dark" style="height: calc(var(--hu) * 266.1)" src="option-2-bold/svg/crown-point-option-2-badge-dark.svg?v=20261103" alt="Option 2 logo with the badge">
+          <ul><li>Home</li><li>Services</li><li>Projects</li><li>About</li></ul>
+          <span class="cta">Get a quote</span>
+        </div>
+        <div class="hero"></div>
       </div>
-      <div class="hero"></div>
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i><span></span></div>
+        <div class="nav">
+          <img class="on-light" style="height: calc(var(--hu) * 260.3)" src="option-2-bold/svg/crown-point-option-2-crown-light.svg?v=20261103" alt="Option 2 logo with the crown">
+          <img class="on-dark" style="height: calc(var(--hu) * 260.3)" src="option-2-bold/svg/crown-point-option-2-crown-dark.svg?v=20261103" alt="Option 2 logo with the crown">
+          <ul><li>Home</li><li>Services</li><li>Projects</li><li>About</li></ul>
+          <span class="cta">Get a quote</span>
+        </div>
+        <div class="hero"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="symbols">
+    <p class="label"><b>Symbols</b> · Both options</p>
+    <div class="icons">
+      <img class="icon" src="symbols/svg/crown-point-symbol-badge.svg?v=20261103" alt="Badge symbol">
+      <img class="icon" src="symbols/svg/crown-point-symbol-crown.svg?v=20261103" alt="Crown symbol">
     </div>
   </section>
 </main>
